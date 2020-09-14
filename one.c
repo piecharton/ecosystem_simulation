@@ -1,30 +1,4 @@
-#include <stdio.h>
-#include <time.h>
-#include <string.h>
-#include <stdlib.h>
-
-void fill_map(char map[11][11])
-{
-    int i = 0;
-
-    while (i < 10)
-      {
-	memset(map[i], '.', 10);
-	map[i][10] = 0;
-	i++;
-      }
-}
-
-void print_map(char map[11][11])
-{
-  int i = 0;
-
-  while (i < 10)
-     {
-      puts(map[i]);
-      i++;
-    }
-}
+#include "includes/one.h"
 
 int main()
 {
@@ -32,15 +6,24 @@ int main()
   int i = 0;
   int x, y;
   time_t random;
+  t_animal *lst_animal;
+
 
   fill_map(map);
-
   srand((unsigned)time(&random));
-  x = rand() % 10;
-  y = rand() % 10;
-  map[x][y] = 'X';
-
-  printf("Coordonnées du point : %d et %d\n", x, y);
-  print_map(map);
+  lst_animal = generate_new_population(3);
+ 
+  add_animal_pos_to_map(map, lst_animal);
+  while (i < 500)
+{
+	move_all_animals(lst_animal);
+  	fill_map(map);	
+  	add_animal_pos_to_map(map, lst_animal);
+  	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	print_map(map);
+	putchar('\n');
+	sleep(1);
+	i++;
+}
   return (0);
 }
