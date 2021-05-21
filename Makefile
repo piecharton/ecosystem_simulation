@@ -6,9 +6,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = ecosystem_sim
 INCLUDES = -I ./includes
-SRCS =	one.o \
+SRCS =	main.o \
 		map.o \
-		lst_animal.o
+		animal.o
 
 .PHONY: clean fclean re
 

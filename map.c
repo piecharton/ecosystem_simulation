@@ -1,4 +1,4 @@
-#include "includes/one.h"
+#include "includes/header.h"
 
 void fill_map(char map[11][11])
 {
@@ -23,13 +23,13 @@ void print_map(char map[11][11])
     }
 }
 
-
-void add_animal_pos_to_map(char map[11][11], t_animal *lst_animal)
+void add_animal_pos_to_map(char map[11][11])
 {
-	while (lst_animal)
+  t_animal *ptr = global->tab;
+	while (ptr)
 	{
-		map[lst_animal->x][lst_animal->y] = 'X';
-		lst_animal = lst_animal->next;
+		map[ptr->x][ptr->y] = 'X';
+		ptr++;
 	}
 }
 
