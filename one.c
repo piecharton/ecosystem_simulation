@@ -4,7 +4,7 @@ int main()
 {
   char map[11][11];
   int i = 0;
-  int x, y;
+  //int x, y;
   time_t random;
   t_animal *lst_animal;
 
