@@ -41,7 +41,7 @@ void fill_map(char map[11][11]);
 void print_map(char map[11][11]);
 
 t_animal *generate_new_animal();
-t_animal *generate_new_population(int number_of_animals);
+void	generate_new_population(int number_of_animals);
 void	print_lst_animal(t_animal *to_print);
 int insert_new_animal(t_animal *new);
 void	add_animal_pos_to_map(char map[11][11]);

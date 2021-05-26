@@ -16,7 +16,7 @@ t_animal	*generate_new_animal()
 	return (new);
 }
 
-t_animal	*generate_new_population(int number_of_animals)
+void	generate_new_population(int number_of_animals)
 {
 	int	count;
 	t_animal *tok;
@@ -31,27 +31,27 @@ t_animal	*generate_new_population(int number_of_animals)
 			count++;
 		}
 		else
-			return (NULL);
+			break ;
 	}
 	global->tab[count] = (t_animal *)NULL;
-	return (global->tab);
 }
 
+/*
 void		move_all_animals(void)
 {
-	t_animal *ptr = global->tab;
-	while (ptr)
+	t_animal **ptr = global->tab;
+	while (ptr && *ptr)
 	{
-		ptr->x += (rand() % 3) - 1;
-		ptr->y += (rand() % 3) - 1;
-		ptr->x = ptr->x < 0 ? 0: ptr->x;
-		ptr->y = ptr->y < 0 ? 0 : ptr->y;
-		ptr->x = ptr->x > 9 ? 9 : ptr->x;
-		ptr->y = ptr->y > 9 ? 9 : ptr->y;
-		ptr++;
+		*ptr->x += (rand() % 3) - 1;
+		*ptr->y += (rand() % 3) - 1;
+		*ptr->x = *ptr->x < 0 ? 0:*ptr->x;
+		*ptr->y = *ptr->y < 0 ? 0 : *ptr->y;
+		*ptr->x = *ptr->x > 9 ? 9 : *ptr->x;
+		*ptr->y = *ptr->y > 9 ? 9 : *ptr->y;
+		(*ptr)++;
 	}
 }
-
+*/
 void	print_lst_animal(t_animal *to_print)
 {
 	t_animal *ptr = to_print;
